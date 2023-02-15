@@ -1,0 +1,52 @@
+.border-b-1 {
+    border-bottom: 0.1px rgba(162, 161, 161, 0.661) solid;
+}
+
+.text-red {
+    color: rgb(240, 0, 0);
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.border-radius-20 {
+    border-radius: 20px;
+}
+
+.no-border-right {
+    border-right: 0;
+}
+
+.icon-search {
+    font-size:1.3rem; 
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.hover-red {
+    background-color: red;
+    color: red;
+}
+
+.icon {
+    font-size: 1.3rem;
+}
+.icon-2 {
+    font-size: 1.5rem;
+}
+
+.icon-watsapp {
+    color: green;
+}
+
+.button-fixed {
+    position: fixed;
+    top: 90vh;
+    right: 5vh;
+}
+
+
+.item-category:hover {
+    color: red;
+}

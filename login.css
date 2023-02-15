@@ -1,0 +1,31 @@
+
+.img-logo {
+    display: none;
+}
+
+.img-all-fixed {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
+
+.flex-oposite {
+    position: absolute;
+    top: 40vh;
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+    .img-all-fixed {
+    }
+    .img-temp {
+        display: none;
+    }
+    .img-logo {
+        display: block;
+    }
+}

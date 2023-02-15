@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="images/cubo rubik.png" />
+    
+    <link rel="stylesheet" href="complements/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="pagination1.css">
+    <link rel="stylesheet" href="productos.css">
+
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, white, blueviolet, white);
+  over-flow: hidden;
+  background-repeat: no-repeat;
+}
+
+.pagination ul {
+  list-style: none;
+  font-size: clamp(1.4vw, 1.6rem, 1.4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 50px;
+  padding: 1rem;
+  font-weight: semi-bold;
+}
+ul li {
+  cursor: pointer;
+  padding: min(1.2rem, 1.5vw);
+  text-align: center;
+  transition: all 0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.dots {
+  cursor: default;
+}
+span {
+  display: block;
+}
+.prev span,
+.next span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+span ion-icon {
+  font-size: 1.5rem;
+}
+.prev,
+.next {
+  background-color: rgb(234, 12, 12);
+  padding: min(1.5rem, 1.5vw);
+}
+
+ul .prev {
+  border-radius: 25px 5px 5px 25px;
+}
+ul .next {
+  border-radius: 5px 25px 25px 5px;
+}
+.num {
+  border-radius: 50%;
+  max-width: 50px;
+  max-height: 50px;
+}
+ul .active,
+ul .num:hover,
+ul .btn:hover {
+  background-color: rgb(227, 4, 4);
+  color: white;
+}
+
+#par {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+    </style>
+
+    <script src="complements/jquery.js"></script>
+    <script src="complements/popper.js"></script>
+    <script src="complements/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <title>Dust</title>
+</head>
+
+<body>
+
+   <!-- Navbar -->
+   <div id="par"></div>
+   <div class="pagination">
+         <ul>
+           <li class="btn prev">
+             <span><ion-icon name="chevron-back-outline"></ion-icon>prev</span>
+           </li>
+           <li class="num active"><span>1</span></li>
+           <li class="num"><span>2</span></li>
+           <li class="dots"><span>...</span></li>
+           <li class="num"><span>4</span></li>
+           <li class="btn next">
+             <span>next<ion-icon name="chevron-forward-outline"></ion-icon></span>
+           </li>
+         </ul>
+       </div>
+   
+
+    <script>
+    const ulTag = document.querySelector(".pagination ul");
+
+function pagination(totalPages, page) {
+  let liTag = "";
+  let beforePage = page - 1; //4
+  let afterPage = page + 1; //5
+  let activeLi = "";
+  let totalP = totalPages;
+  // if page is greater than 1  then show the prev button
+  // display prev button
+  if (page > 1) {
+    liTag += `<li class="btn prev"onClick="pagination(${totalP}, ${page - 1})">
+                <span>
+                <ion-icon name="chevron-back-outline"></ion-icon>
+                prev
+                </span>
+              </li>`;
+  }
+
+  //add page one if there is more than 2 pages
+  if (page > 2) {
+    liTag += `        <li class="num " onClick="pagination(${totalPages}, ${1})"><span>1</span></li>
+    `;
+    //add dots   if there is more than 3 pages
+
+    if (page > 3) {
+      liTag += `        <li class="dots"><span>...</span></li>
+      `;
+    }
+  }
+  if (page == totalPages) {
+    // لو انا ف اخر صفحة عايز اعضر قبلي تلت صفحات ولو في الي قبل الخيره اعشضر اتنين قبلي بس
+    beforePage = beforePage - 2;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage - 1;
+  }
+  if (page == 1) {
+    // لو انا ف اخر صفحة عايز اعضر قبلي تلت صفحات ولو في الي قبل الخيره اعشضر اتنين قبلي بس
+    afterPage = afterPage + 2;
+  } else if (page == totalPages - 1) {
+    afterPage = afterPage + 1;
+  }
+  // display prev page and current page and after page
+  for (let pageNum = beforePage; pageNum <= afterPage; pageNum++) {
+    if (pageNum > totalPages) {
+      continue;
+    }
+    if (pageNum == 0) {
+      // pageNum = pageNum + 1;
+      continue;
+    }
+    page == pageNum ? (activeLi = "active") : (activeLi = "");
+
+    liTag += `<li class="num ${activeLi}" onClick="pagination(${totalPages}, ${pageNum})"><span>${pageNum}</span></li>`;
+    //4 5 6
+  }
+
+  // display next button
+  //add page one if there is more than 2 pages
+  if (page < totalPages - 1) {
+    //add dots   if there is more than 3 pages
+    if (page < totalPages - 2) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="num " onClick="pagination(${totalPages}, ${totalPages})"><span>${totalPages}</span></li>`;
+  }
+
+  if (page < totalPages) {
+    liTag += `<li class="btn next"onClick="pagination(${totalP}, ${page + 1})">
+  <span>next<ion-icon name="chevron-forward-outline"></ion-icon></span>
+</li>`;
+  }
+
+  ulTag.innerHTML = liTag;
+}
+pagination(100, 50);
+
+
+/* ---- particles.js config ---- */
+
+
+
+
+particlesJS("par", {
+  particles: {
+    number: {
+      value: 300,
+      density: {
+        enable: true,
+        value_area: 800,
+      },
+    },
+    color: {
+      value: "#660e66",
+    },
+    shape: {
+      type: "square",
+      stroke: {
+        width: 0,
+        color: "#660e66",
+      },
+      polygon: {
+        nb_sides: 10,
+      },
+      image: {
+        src: "img/github.svg",
+        width: 100,
+        height: 100,
+      },
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false,
+      },
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 3,
+        size_min: 0.1,
+        sync: false,
+      },
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#fff",
+      opacity: 0.4,
+      width: 1,
+    },
+    move: {
+      enable: true,
+      speed: 2.5,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200,
+      },
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab",
+      },
+      onclick: {
+        enable: true,
+        mode: "push",
+      },
+      resize: true,
+    },
+    modes: {
+      grab: {
+        distance: 140,
+        line_linked: {
+          opacity: 1,
+        },
+      },
+      bubble: {
+        distance: 400,
+        size: 40,
+        duration: 2,
+        opacity: 8,
+        speed: 3,
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4,
+      },
+      push: {
+        particles_nb: 4,
+      },
+      remove: {
+        particles_nb: 2,
+      },
+    },
+  },
+  retina_detect: true,
+});
+
+/* ---- stats.js config ---- */
+
+var count_particles, stats, update;
+stats = new Stats();
+stats.setMode(0);
+stats.domElement.style.position = "absolute";
+stats.domElement.style.left = "0px";
+stats.domElement.style.top = "0px";
+document.body.appendChild(stats.domElement);
+count_particles = document.querySelector(".js-count-particles");
+update = function () {
+  stats.begin();
+  stats.end();
+  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+  }
+  requestAnimationFrame(update);
+};
+requestAnimationFrame(update);
+
+// i learned this in codingnepal channel and i made it responsive and added some styles
+//https://www.youtube.com/watch?v=d2ve7xQNco8&t=91s&ab_channel=CodingNepal
+    </script>
+
+</body>
+
+</html>

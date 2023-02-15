@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="images/cubo rubik.png" />
+
+
+    <link rel="stylesheet" href="complements/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/splide.min.css">
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/themes/splide-default.min.css">
+    <link rel="stylesheet" href="splide-4.1.3/dist/css/splide-core.min.css">
+
+    <style>
+        .splide {
+            margin: 0 auto;
+        }
+
+        .thumbnails {
+            display: flex;
+            margin: 1rem auto 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            overflow: hidden;
+            list-style: none;
+            margin: 0 0.2rem;
+            cursor: pointer;
+            opacity: 0.3;
+        }
+
+        .thumbnail.is-active {
+            opacity: 1;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+
+    <script src="complements/jquery.js"></script>
+    <script src="complements/popper.js"></script>
+    <script src="complements/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script src="splide-4.1.3/dist/js/splide.min.js"></script>
+
+    <title>Dust</title>
+</head>
+
+<body class="">
+    <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <img loading="lazy" src="images/p1.jpeg" alt="" />
+                </li>
+                <li class="splide__slide">
+                    <img loading="lazy" src="images/p1.jpeg" alt="" />
+                </li>
+                <li class="splide__slide">
+                    <img loading="lazy" src="images/p1.jpeg" alt="" />
+                </li>
+                <li class="splide__slide">
+                    <img loading="lazy" src="images/p1.jpeg" alt="" />
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <ul id="thumbnails" class="thumbnails">
+        <li class="thumbnail">
+            <img loading="lazy" src="images/p1.jpeg" alt="" />
+        </li>
+        <li class="thumbnail">
+            <img loading="lazy" src="images/p1.jpeg" alt="" />
+        </li>
+        <li class="thumbnail">
+            <img loading="lazy" src="images/p1.jpeg" alt="" />
+        </li>
+        <li class="thumbnail">
+            <img loading="lazy" src="images/p1.jpeg" alt="" />
+        </li>
+    </ul>
+
+    <script>
+        var splide = new Splide("#main-slider", {
+            width: 600,
+            height: 300,
+            pagination: false,
+            cover: true
+        });
+
+        var thumbnails = document.getElementsByClassName("thumbnail");
+        var current;
+
+        for (var i = 0; i < thumbnails.length; i++) {
+            initThumbnail(thumbnails[i], i);
+        }
+
+        function initThumbnail(thumbnail, index) {
+            thumbnail.addEventListener("click", function () {
+                splide.go(index);
+            });
+        }
+
+        splide.on("mounted move", function () {
+            var thumbnail = thumbnails[splide.index];
+
+            if (thumbnail) {
+                if (current) {
+                    current.classList.remove("is-active");
+                }
+
+                thumbnail.classList.add("is-active");
+                current = thumbnail;
+            }
+        });
+
+        splide.mount();
+    </script>
+</body>
+
+</html>

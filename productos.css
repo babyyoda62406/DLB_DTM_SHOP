@@ -1,0 +1,133 @@
+.details {
+    display: none;
+}
+
+.genre {
+    visibility: hidden;
+}
+
+
+.product:hover img {
+    color: red;
+}
+
+.hover-gray:hover {
+    background-color: rgb(184, 184, 184);
+}
+
+.hover-green:hover {
+    background-color: rgb(45, 172, 0);
+}
+
+.hover-blue:hover {
+    background-color: rgb(150, 227, 241);
+}
+
+.hover-dark-blue:hover {
+    background-color: rgb(76, 185, 224);
+}
+
+.bg-gray {
+    background-color: rgb(184, 184, 184);
+}
+
+.bg-blue {
+    background-color: rgb(150, 227, 241);
+}
+
+.bg-dark-blue {
+    background-color: rgb(76, 185, 224);
+}
+
+.bg-green {
+    background-color: rgb(45, 172, 0);
+}
+
+
+.price {
+    visibility: hidden;
+}
+
+.product:hover .details {
+    display: block;
+}
+.product-index:hover .details {
+    display: block;
+}
+
+.product:hover .genre {
+    visibility: visible;
+}
+
+.select {
+    width: 300px;
+}
+
+
+.star-fill {
+    color: rgb(255, 164, 96);
+}
+
+
+.product-father {
+    height: 480px;
+}
+
+.product-father-index {
+    height: 450px;
+}
+
+.product-index {
+    transition: all 0.3s ease;  
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.254);
+    height: 450px;
+    border-radius: 5px;
+}
+
+.product {
+    transition: all 0.3s ease; 
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.254);
+    height: 480px;
+    border-radius: 5px;
+}
+
+.hover-text-red {
+    color: red;
+}
+
+
+.image {
+    height: auto;
+    max-height: 270px;
+    min-height: 200px;
+}
+
+.product-item {
+
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.middle {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.high-f {
+    position: absolute;
+    top: 0.75rem;
+    left: 30px; 
+    margin-top: 20px;
+}
+
+.high-s {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.3rem;
+    transform: translate(-50%, 50%);
+}

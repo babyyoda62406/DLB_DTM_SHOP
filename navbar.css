@@ -1,0 +1,142 @@
+body {
+    background-color: #f5f6f9;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+.dtmNav {
+    padding-top: 20px;
+}
+
+
+
+.dtmMenu { 
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 150px;
+}
+
+
+.dtmMenu > li {
+    list-style-type: none;
+}
+.dtmMenu > li:hover {
+}
+
+.link-nav {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    transition: all .4s ease;
+}
+.link-nav:hover {
+    background-color: red;
+    border-radius: 20px;
+    color: white;
+    padding: 6px 15px;
+}
+
+
+.navCaption {
+    padding: 5px;
+}
+
+.button-close-fixed {
+
+    position: fixed;
+    top: 10px;
+    right: 42%; 
+    background-color: red; 
+    padding: 5px 10px;
+    transition: all 1s ease;
+}
+
+.dNone {
+    display: none  ;
+}
+
+.btnClose { 
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+    display: none;
+    background-color: red; 
+    padding: 0px 5px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.translateIx {
+    transition: all 1s;
+    transform: translateX(-300px);
+}
+
+
+@media (max-width: 1000px) {
+
+    .list-icon {
+        font-size: 1.7rem;
+        color: white;
+    }
+
+    .btnClose {
+
+        display: flex;
+    }
+
+    .translatex {
+        transform: translateX(390px);
+    }
+
+    .dtmNav {
+        display: block;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 40%;
+        position: fixed;
+        right: 0px;
+        transition: all 1s;
+        padding-top: 0px;
+    }
+
+
+
+    .dtmMenu {
+        display: block; 
+        padding: 0px !important; 
+        color: blueviolet;
+        height: 100vh !important;
+        background-color: white;
+        padding-top: 0px;
+    }
+
+    .dtmMenu>li {
+        border-bottom: 1px solid rgba(41, 39, 39, 0.119);
+        padding: 6px;
+        width: 100%;
+        cursor: pointer;
+    }
+    .dtmMenu > li:hover {
+        background-color: rgb(229, 229, 229);
+    }
+    .link-nav:hover {
+        background-color: transparent;
+        border-radius: none;
+        color: black;
+        transition: all none;
+    }
+ 
+    .button-close-fixed {
+        transition: all 2s ease;
+    }   
+
+    .dNone {
+        display: none !important;
+    }
+
+}

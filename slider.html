@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="images/cubo rubik.png" />
+
+
+    <link rel="stylesheet" href="complements/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font/bootstrap-icons.css">
+    <link rel="stylesheet" href="complements/splide.min.css">
+    <link rel="stylesheet" href="complements/splide-default.min.css">
+    <link rel="stylesheet" href="complements/splide-core.min.css">
+    <link rel="stylesheet" href="productos.css">
+    <style>
+     
+        .splide__slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .splide__slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .splide__slide { 
+        }
+
+
+        .splide__slide.is-active { 
+        }
+    </style>
+
+
+    <script src="complements/jquery.js"></script>
+    <script src="complements/popper.js"></script>
+    <script src="complements/bootstrap/js/bootstrap.bundle.js"></script> 
+    <script src="complements/splide.min.js"></script>
+
+    <title>Dust</title>
+</head>
+
+<body class="">
+ 
+ 
+
+    <section id="image-carousel" class="splide" aria-label="Hermosas imágenes">
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">
+                    <div class="card p-3  product cursor">
+                        <div class="card-body">
+                            <img loading="lazy" src="images/p1.jpeg" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="">
+                            <p>
+                                EB-ALBT140 AIRLINK AIR CONDUCTION HEADPHONES</p>
+                            <p class="price ">
+                                EB-ALBT140 AIRLINK AIR CONDUCTION </p>
+                        </div>
+                    </div>
+                  </li>
+      
+      
+                  <li class="splide__slide">
+                    <div class="card p-3  product cursor">
+                        <div class="card-body">
+                            <img loading="lazy" src="images/p1.jpeg" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="">
+                            <p>
+                                EB-ALBT140 AIRLINK AIR CONDUCTION HEADPHONES</p>
+                            <p class="price ">
+                                EB-ALBT140 AIRLINK AIR CONDUCTION </p>
+                        </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="card p-3  product cursor">
+                        <div class="card-body">
+                            <img loading="lazy" src="images/login.jpeg" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="">
+                            <p>
+                                EB-ALBT140 AIRLINK AIR CONDUCTION HEADPHONES</p>
+                            <p class="price ">
+                                EB-ALBT140 AIRLINK AIR CONDUCTION </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="card p-3  product cursor">
+                        <div class="card-body">
+                            <img loading="lazy" src="images/p1.jpeg" class="img-fluid w-100" alt="">
+                        </div>
+                        <div class="">
+                            <p>
+                                EB-ALBT140 AIRLINK AIR CONDUCTION HEADPHONES</p>
+                            <p class="price ">
+                                EB-ALBT140 AIRLINK AIR CONDUCTION </p>
+                        </div>
+                    </div>
+                </li>
+              </ul>
+        </div>
+      </div>
+    </section>
+
+    <script> 
+ 
+
+        new Splide( '#image-carousel', {
+		perPage    : 4,
+		breakpoints: {
+			640: {
+				perPage: 2,
+			},
+			800: {
+				perPage: 3,
+			},
+		},
+  } ).mount();
+    </script>
+</body>
+
+</html>

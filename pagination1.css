@@ -1,0 +1,80 @@
+.pagination ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1rem;
+    background-color: rgb(245, 246, 249);
+    border-radius: 50px; 
+}
+
+.pag-item {
+    cursor: pointer;
+    padding: min(1.2rem, 1.5vw);
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dots {
+    cursor: default;
+}
+
+span {
+    display: block;
+}
+
+.prev span,
+.next span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+span ion-icon {
+    font-size: 1.5rem;
+}
+
+.prev,
+.next {
+    background-color: red;
+    padding: min(1.5rem, 1.5vw);
+}
+
+ul .prev {
+    border-radius: 25px 5px 5px 25px;
+}
+
+ul .next {
+    border-radius: 5px 25px 25px 5px;
+}
+
+.num {
+    border-radius: 50%;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+ul .active,
+ul .num:hover,
+ul .btn:hover {
+    background-color: red;
+    color: white;
+}
+
+#par {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.icon-move { 
+}
