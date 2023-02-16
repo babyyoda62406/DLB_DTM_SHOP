@@ -36,9 +36,6 @@ class Server {
         
         // Directorio publico
         this.app.use(express.static('public'))
-
-        // rutas de la vista
-        this.routesViewHbs()
     }
 
     async upDB() {
@@ -55,36 +52,12 @@ class Server {
     }
 
     routes() {
-        // Rutas Post
+        // Rutas HBS
+        this.app.use("/" , require('../routes/hbs'))
+        // Ritas Get
         this.app.use("/", require("../routes/get"))
+        // Rutas Post
         this.app.use("/", require("../routes/post"))
-    }
-
-    routesViewHbs() {
-        this.app.get('/', (req, res) => {
-            res.render("home", {
-                name: "freedom"
-             })
-        })
-        this.app.get('/producto', (req, res) => {
-            res.render("producto", {
-                name: "freedom"
-             })
-        })
-        this.app.get('/productos', (req, res) => {
-            res.render("productos", {
-                name: "freedom"
-             })
-        })
-        this.app.get('/login', (req, res) => {
-            res.render("login", {
-                name: "freedom"
-             })
-        })
-
-        this.app.get('*', (req, res) => {
-            res.send("Pagina no encontrada")
-        })
     }
 
     run() {
