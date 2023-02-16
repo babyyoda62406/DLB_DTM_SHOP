@@ -77,7 +77,9 @@ class Server {
              })
         })
         this.app.get('/login', (req, res) => {
-            res.sendFile(this.getDirection('/public/login.html'))
+            res.render("login", {
+                name: "freedom"
+             })
         })
 
         this.app.get('*', (req, res) => {
