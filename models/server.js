@@ -10,6 +10,7 @@ class Server {
         this.app = express()
         this.middlewares()
         this.upDB()
+        this.routesViewHbs()
         this.routes()
         this.run()
     }
@@ -36,9 +37,6 @@ class Server {
         
         // Directorio publico
         this.app.use(express.static('public'))
-
-        // rutas de la vista
-        this.routesViewHbs()
     }
 
     async upDB() {
@@ -81,7 +79,6 @@ class Server {
                 name: "freedom"
              })
         })
-
         this.app.get('*', (req, res) => {
             res.send("Pagina no encontrada")
         })

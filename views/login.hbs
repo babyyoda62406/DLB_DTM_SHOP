@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Freedom</title>
+    <title></title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0 , maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=no">
@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="complements/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="font/bootstrap-icons.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="login.css">
 
 
@@ -18,70 +19,76 @@
     <script src="complements/popper.js"></script>
     <script src="complements/bootstrap/js/bootstrap.bundle.js"></script>
 
+    <title>Dust</title>
 </head>
 
 <body>
 
-    <div class="head head-color"> 
+    <div class="head head-color">
         <a href="/" class="nav-link text-light">Ir al sitio</a>
     </div>
     <div class="triangle">
-        <div class="triangle-svg"  >
+        <div class="triangle-svg">
         </div>
     </div>
 
 
-    <h1 id="tab" class="text-center">Autentificarse</h1>
-    <!-- Registro -->
+    <h1 id="tab" class="text-center mt-5">Autentificarse</h1>
+    <!-- Registro navs -->
     <div class="d-flex justify-content-center mt-5">
         <div>
-            <nav>
-                <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-login-tab" data-bs-toggle="tab" data-bs-target="#nav-login"
-                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">Entrar</button>
-                    <button class="nav-link" id="nav-register-tab" data-bs-toggle="tab" data-bs-target="#nav-register"
-                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Registro</button>
-                </div>
-            </nav>
-            <div class="tab-content mt-4" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-                    <form class="" id="login" autocomplete="off">
-                        <input type="text" class="form-control">
-                        <p>Nombre</p>
-                        <input type="text" class="form-control">
-                        <p>Contrase&ntildea</p>
-                        <div class="d-flex justify-content-around">
-                            <a href="">Recuperar contrase&ntildea</a>
-                            <button type="submit" class="btn btn-success">Entrar</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-                    <form class="" id="register" autocomplete="off">
-                        <input type="text" id="name" class="form-control">
-                        <p>Nombre</p>
-
-                        <input type="text" id="email-phone" class="form-control">
-                        <p>Correo electr&oacutenico o n&uacutemero de telefono</p>
-
-                        <input type="password" id="password" class="form-control">
-                        <p>Contrase&ntildea</p>
-
-                        <input type="password" id="repeat-password" class="form-control">
-                        <p>Repetir contrase&ntildea</p>
-
-                        <input type="file" id="rphoto" class="form-control">
-                        <p>Foto</p>
-                        <div class="d-flex justify-content-around">
-                            <a href="">Recuperar contrase&ntildea</a>
-                            <button type="submit" class="btn btn-success">Entrar</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="d-flex">
+                <p class="cursor p-2 text-nav me-3 text-primary " id="nav-login-tab">Entrar</p>
+                <p class="cursor p-2 text-muted text-primary" id="nav-register-tab">Registro</p>
             </div>
         </div>
     </div>
 
+    <div class="d-flex justify-content-center mt-5">
+        <div>
+            <!-- Formulario login -->
+            <div class="" id="nav-login">
+                <form class="" id="login" autocomplete="off">
+                    <p>Nombre</p>
+                    <input type="text" class="form-control">
+
+                    <p>Contrase&ntildea</p>
+                    <input type="text" class="form-control">
+                    
+                    <div class="d-flex justify-content-around mt-3">
+                        <a href="" id="recuperate" class="text-decoration-none text-success">Recuperar contrase&ntildea</a>
+                        <button type="submit" class="btn btn-success">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Formulario register -->
+            <div class="d-none" id="nav-register">
+                <form class="" id="register" autocomplete="off">
+                    <p>Nombre</p>
+                    <input type="text" id="name" class="form-control">
+        
+                    <p>Correo electr&oacutenico o n&uacutemero de telefono</p>
+                    <input type="text" id="email-phone" class="form-control">
+        
+                    <p>Contrase&ntildea</p>
+                    <input type="password" id="password" class="form-control">
+        
+                    <p>Repetir contrase&ntildea</p>
+                    <input type="password" id="repeat-password" class="form-control">
+        
+                    <p>Foto</p>
+                    <input type="file" id="rphoto" class="form-control">
+                    <div class="d-flex justify-content-around mt-3">
+                        <a href="" id="recuperate" class="text-decoration-none text-success">Recuperar contrase&ntildea</a>
+                        <button type="submit" class="btn btn-success">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
 
 
     <script src="login.js"></script>

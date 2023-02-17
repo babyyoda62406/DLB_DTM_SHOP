@@ -37,6 +37,10 @@
     border-bottom: 10px solid transparent; 
 } 
 
+.text-nav {
+    border-bottom: #070b349a solid 2px;
+}
+
 
 
 @media (max-width: 1000px) {

@@ -1,7 +1,18 @@
-document.getElementById("nav-login-tab").addEventListener("click", () => {
-    document.getElementById("tab").innerHTML = "Autentificarse"
-})
+const btnLogin =  document.getElementById("nav-login-tab")
+const btnRegister = document.getElementById("nav-register-tab") 
+const toggleContent = () => {
+    document.getElementById("nav-login").classList.toggle("d-none")
+    document.getElementById("nav-register").classList.toggle("d-none")
+    btnLogin.classList.toggle("text-muted")
+    btnRegister.classList.toggle("text-muted")
+    btnLogin.classList.toggle("text-nav")
+    btnRegister.classList.toggle("text-nav")
+}
 
-document.getElementById("nav-register-tab").addEventListener("click", () => {
-    document.getElementById("tab").innerHTML = "Registrarse"
+
+btnLogin.addEventListener("click", () => {
+    toggleContent()
 })
+btnRegister.addEventListener("click", () => {
+    toggleContent()
+}) 

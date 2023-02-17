@@ -12,10 +12,11 @@
     margin: 0 auto;
     width: auto;
     max-width: 224px;
+    transition: all 1s ease;
 }
 
 .searchbar:hover {
-    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    box-shadow: 0 3px 6px rgb(32 33 36 / 28%);
     border-color: rgba(223, 225, 229, 0);
 }
 

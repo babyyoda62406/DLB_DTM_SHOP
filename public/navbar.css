@@ -2,12 +2,12 @@ body {
     background-color: #f5f6f9;
     margin: 0px;
     padding: 0px;
-
 }
 
 
 .dtmNav {
     padding-top: 20px;
+    text-align: end;
 }
 
 
@@ -30,12 +30,11 @@ body {
     color: black;
     padding: 10px;
     transition: all .4s ease;
+    border-radius: 20px;
 }
 .link-nav:hover {
     background-color: red;
-    border-radius: 20px;
-    color: white;
-    padding: 6px 15px;
+    color: white; 
 }
 
 
