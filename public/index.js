@@ -3,20 +3,18 @@
 
 
 
-const getProduct = async () => {
-    let products = await fetch('https://fakestoreapi.com/products')
-    products = await products.json()
+const renderProduct = (products) => {
     productsDiv = document.getElementById("last")
     productsDiv.innerHTML = ""
     html = ""
     for (let i = 0; i < products.length; i++) {
         const element = products[i];
-        
-        const html  = document.createElement('div')
-        const classList = ['text-center' ,'product-father-index',  'p-1', 'mt-2',  'col-12', 'col-sm-6',  'col-md-4' ,'col-lg-3' ,'col-xl-2']
+
+        const html = document.createElement('div')
+        const classList = ['text-center', 'product-father-index', 'p-1', 'mt-2', 'col-12', 'col-sm-6', 'col-md-4', 'col-lg-3', 'col-xl-2']
 
         classList.forEach(element => {
-            html.classList.add(element)            
+            html.classList.add(element)
         });
         html.innerHTML = `
         <li class="splide__slide text-center me-1 ms-1">
@@ -54,10 +52,21 @@ const getProduct = async () => {
             </div>  
         </li> 
             `
-            productsDiv.appendChild(html)
+        productsDiv.appendChild(html)
     }
 
     // productsDiv.innerHTML = html
+}
+
+
+const getProduct = async () => {
+    try {
+        let products = await fetch('https://fakestoreapi.com/products')
+        products = await products.json()
+        renderProduct(products)
+    } catch (error) {
+
+    }
 }
 
 const getStars = (num) => {

@@ -1,7 +1,5 @@
 
-const getProduct = async () => {
-    let products = await fetch('https://fakestoreapi.com/products')
-    products = await products.json()
+const renderProduct = (products) => {
     const productsDiv = document.getElementById("products-div")
     
     for (let i = 0; i < products.length; i++) {
@@ -50,6 +48,16 @@ const getProduct = async () => {
     }
 
     
+}
+
+const getProduct = async () => {
+    try {
+        let products = await fetch('https://fakestoreapi.com/products')
+        products = await products.json()
+        renderProduct(products)
+    } catch (error) {
+
+    }
 }
 
 const getStars = (num) => {
