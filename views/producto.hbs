@@ -45,10 +45,40 @@
 
 
     <!-- Producto -->
-    <div class="row mt-5 m-1 p-5 bg-green">
+    <div class="row mt-5 m-1 p-5">
         <!-- Slider -->
-        <div class="col-12 col-lg-6 row">
-            <ul id="thumbnails" class="thumbnails d-flex order-1 order-lg-0 d-lg-block col-12 col-lg-2">
+        <div class="col-12 col-lg-6">
+            <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="d-flex justify-content-center">
+                                <a href="images/home.jpeg" class="zoom"><img src="images/home.jpeg"
+                                        class="w-100 img-fluid" /></a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="d-flex justify-content-center">
+                                <a href="images/p2.jpeg" class="zoom"><img src="images/p2.jpeg"
+                                        class="w-100 img-fluid" /></a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="d-flex justify-content-center">
+                                <a href="images/p2.jpeg" class="zoom"><img src="images/p2.jpeg"
+                                        class="w-100 img-fluid" /></a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="d-flex justify-content-center">
+                                <a href="images/p2.jpeg" class="zoom"><img src="images/p2.jpeg"
+                                        class="w-100 img-fluid" /></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <ul id="thumbnails" class="thumbnails d-flex ">
                 <li class="thumbnail">
                     <img loading="lazy" src="images/p1.jpeg" alt="" />
                 </li>
@@ -62,75 +92,106 @@
                     <img loading="lazy" src="images/p1.jpeg" alt="" />
                 </li>
             </ul>
-            <section id="main-slider" class="splide col-12 col-lg-10" aria-label="My Awesome Gallery">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide">
-                            <div class="d-flex justify-content-center">
-                                <a href="images/home.jpeg" class="zoom"><img src="images/home.jpeg"  class="w-100 img-fluid"/></a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="d-flex justify-content-center">
-                                <a href="images/p2.jpeg" class="zoom"><img src="images/p2.jpeg"  class="w-100 img-fluid"/></a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="d-flex justify-content-center">
-                                <a href="images/p2.jpeg" class="zoom"><img src="images/p2.jpeg"  class="w-100 img-fluid"/></a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="d-flex justify-content-center">
-                                <a href="images/p2.jpeg" class="zoom"><img src="images/p2.jpeg"  class="w-100 img-fluid"/></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
         </div>
 
-        <div class="col-12 col-lg-6 p-2 mt-3 text-light">
-            <h2 id="name">ADAPTADOR MINI DISPLAY A VGA</h2>
-            <div class="divider"></div>
-            <h5 class="mt-3">Precios</h5>
-            <div class="divider"></div>
-            <div id="prices" class="d-flex mt-3">
-                <p class="me-3 p-2 bg-black prices-item cursor">$ 21212</p>
-                <p class="p-2 bg-black prices-item cursor">$ 4242</p>
-            </div>
-            <h5 class="mt-2">Categor&iacuteas</h5>
-            <div class="divider"></div>
+        <div class="col-12 col-lg-6 p-2 mt-3 text-black-75">
+            <!-- Nombres -->
+            <p class="text-muted">Armani Brand</p>
+            <p class="h1 mt-3 cursor text-hover-blue">Cu dicam nostro est</p>
+
             <div class="d-flex">
-                <a href="#" class="nav-item text-decoration-none mt-3 me-2 category-a text-hover-red"> <p>Cubo 3x3</p></a>
+                <div class="">
+                    <i class="bi bi-star-fill star-fill"></i>
+                    <i class="bi bi-star-fill star-fill"></i>
+                    <i class="bi bi-star-fill star-fill"></i>
+                    <i class="bi bi-star-fill star-fill"></i>
+                    <i class="bi bi-star-half star-fill"></i>
+                </div>
             </div>
 
+            <!-- Acordion -->
+            <div class="mt-2">
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="headingOne">
+                        <div class="accordion-button collapsed text-muted" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDescription" aria-expanded="true" aria-controls="collapseOne">
+                            Descripci&oacuten
+                        </div>
+                    </h4>
+                    <div id="collapseDescription" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Fashion has always been so temporary and uncertain. You can’t keep up with it. This social
+                                phenomenon is very whimsical, thus we as the consumers always try to stay in touch with all
+                                the latest fashion tendencies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h4 class="accordion-header" id="headingOne">
+                        <div class="accordion-button collapsed text-muted" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDelivery" aria-expanded="true" aria-controls="collapseOne">
+                            Entrega
+                        </div>
+                    </h4>
+                    <div id="collapseDelivery" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>We deliver our goods worldwide. No matter where you live, your order will be shipped in time and delivered right to your door or to any other location you have stated. The packages are handled with utmost care, so the ordered products will be handed to you safe and sound, just like you expect them to be.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 
-            <button class="btn btn-danger rounded rounded-pill mt-4">Comprar</button>
+            <!-- Precio -->
+            <div class="d-flex mt-4">
+                <p class="h1">$35.00</p>
+                <p class="h3 text-muted text-decoration-line-through ms-2 mt-2">$57.00</p>
+            </div>
+
+            <!-- Acciones -->
+            <div class="d-flex flex-wrap">
+                <div class="d-flex m-1">
+                    <label for="cant">Cantidad:</label>
+                    <input type="number" class="ms-2 form-control w-number" name="cant">
+                </div>
+                <button class="btn btn-success ms-3 m-1">
+                    <div class="d-flex">
+                        <i class="bi bi-cart font-x-large me-1"></i>
+                        <p class="pt-2">Agregar al carro</p>
+                    </div>
+                </button>
+                <button class="btn btn-success ms-3 m-1">
+                    <div class="d-flex">
+                        <i class="bi bi-eye-fill font-x-large me-1"></i>
+                        <p class="pt-2">Seguir mirando</p>
+                    </div>
+                </button>
+            </div>
         </div>
-
     </div>
 
 
-
-    <!-- Detalles -->
-    <div class="mt-5 mb-5 p-5">
-        <h5>Detalles</h5>
-        <hr>
-        <p class="text-muted">Conector Puerto Mini Display a adaptador VGA
-
-            <p class="text-muted">Permite duplicar la pantalla de tu ordenador con entrada Puerto Mini Display en una pantalla con conector
-            VGA</p>
-
-            <p class="text-muted">Diseñado para laptops y compatibles con modelos Apple como iMac y MacBook</p>
-
-            <p class="text-muted">Excelente para pantallas anchas</p>
-
-            <p class="text-muted">Diseño portátil, fácil de transportar y usar</p>
-
-            <p class="text-muted">Longitud de cable: 6 pulgs / 17 cms</p>
-
-            <p class="text-muted">Compatible con MAC y Windows</p>
+    <!-- Otras opciones -->
+    <nav class="d-flex justify-content-center">
+        <div class="nav nav-tabs " id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-additional-information-tab" data-bs-toggle="tab" data-bs-target="#nav-additional-information"
+                type="button" role="tab" aria-controls="nav-additional-information" aria-selected="true">Informaci&oacuten adicional</button>
+            <button class="nav-link" id="nav-others-tab" data-bs-toggle="tab" data-bs-target="#nav-others"
+                type="button" role="tab" aria-controls="nav-others" aria-selected="false">Otros datos</button>
+        </div>
+    </nav>
+    <div class="tab-content border-nav m-4 mt-0 p-5" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-additional-information" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p>Fashion has always been so temporary and uncertain. You can’t keep up with it. This social phenomenon is very whimsical, thus we as the consumers always try to stay in touch with all the latest fashion tendencies.</p>
+        </div>
+        <div class="tab-pane fade" id="nav-others" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p><strong>This is some placeholder content the Profile tab's associated content.</strong> Clicking another
+                tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the
+                content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered
+                navigation.</p>
+        </div> 
     </div>
 
 
