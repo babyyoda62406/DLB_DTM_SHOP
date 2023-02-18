@@ -49,11 +49,11 @@
 }
 
 .accordion-button.collapsed::after {
-	background-image: url(images/267-plus.png); 
+	background-image: url(images/plus.png); 
 }
 
 .accordion-button:not(.collapsed)::after {
-	background-image: url(images/268-minus.png);
+	background-image: url(images/minus.png);
 	transform: none;
 }
 
