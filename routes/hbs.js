@@ -22,6 +22,18 @@ app.get('/login', (req, res) => {
     })
 })
 
+app.get('/contacto', (req, res) => {
+    res.render("contacto", {
+        name: "freedom"
+    })
+})
+
+app.get('/admin', (req, res) => {
+    res.render("admin", {
+        name: "freedom"
+    })
+})
+
 app.get('*', (req, res) => {
     res.send("Pagina no encontrada")
 })
